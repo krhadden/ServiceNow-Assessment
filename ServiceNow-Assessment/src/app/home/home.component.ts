@@ -10,6 +10,8 @@ import { DataService } from '../data.service';
 export class HomeComponent implements OnInit {
   public data: any;
 
+  public displayedColumns: string[] = ['Numbers', 'Priority', 'ShortDescription', 'Category', 'State', 'Created'];
+
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
