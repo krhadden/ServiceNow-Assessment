@@ -64,7 +64,10 @@ export class HomeComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(data => {
-      console.log(`${data}`);
+      if (data) {
+        this.data.push(data.data);
+        this.setStatesData();
+      }
     });
   }
 
