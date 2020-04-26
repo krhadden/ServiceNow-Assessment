@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import * as _ from 'lodash';
+
+import { NewIncidentDialogComponent } from '../new-incident-dialog/new-incident-dialog.component';
 
 import { DataService } from '../data.service';
 
@@ -16,11 +19,12 @@ export class HomeComponent implements OnInit {
   public state: any;
   public showState = false;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.dataService.getAllIncidents().subscribe(data => {
-      this.data = data;
+      // remove duplicate entries for the view
+      this.data = _.uniqWith(data, _.isEqual);
       this.setStatesData();
       this.loading = false;
     });
@@ -41,7 +45,27 @@ export class HomeComponent implements OnInit {
   public selectState(state: string) {
     this.state = this.statesData[state];
     this.showState = true;
-    console.log(this.state);
+  }
+
+  public openNewIncident(): void {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+
+    const dialogRef = this.dialog.open(NewIncidentDialogComponent, {
+      data: {
+        number: '',
+        short_description: '',
+        description: '',
+        state: '',
+        priority: '',
+        sys_created_on: '',
+        active: ''
+      },
+    });
+
+    dialogRef.afterClosed().subscribe(data => {
+      console.log(`${data}`);
+    });
   }
 
 }

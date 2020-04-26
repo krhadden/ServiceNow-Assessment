@@ -1,0 +1,19 @@
+.close-btn {
+    float: right;
+    margin-top: -20px;
+    margin-right: -20px;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.incident-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.incident-actions {
+    float: right;
+}

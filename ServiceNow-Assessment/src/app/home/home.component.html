@@ -1,6 +1,13 @@
 <app-spinner [loading]="loading"></app-spinner>
 <div class="home-container" *ngIf="!loading">
     <ng-container *ngIf="!showState">
+        <div class="header">
+            <div class="home-title">At A Glance</div>
+            <button mat-icon-button color="accent" matTooltip="Create New Incident" (click)="openNewIncident()">
+                <mat-icon>add_box</mat-icon>
+            </button>
+        </div>
+
         <div class="state-cards">
             <mat-card class="state-card" (click)="selectState(state.key)" *ngFor="let state of statesData | keyvalue">
                 <mat-card-content>{{state.key}}</mat-card-content>
@@ -9,6 +16,7 @@
         </div>
 
         <div class="table-container">
+            <div class="table-title">All Incidents</div>
             <app-table [data]="data"></app-table>
         </div>
     </ng-container>

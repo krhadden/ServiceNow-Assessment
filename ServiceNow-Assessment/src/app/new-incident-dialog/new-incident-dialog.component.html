@@ -1,0 +1,32 @@
+
+<button mat-icon-button class="close-btn" (click)="close()">
+    <mat-icon>close</mat-icon>
+</button>
+<h2 mat-dialog-title>New Incident</h2>
+
+<mat-dialog-content>
+
+    <form [formGroup]="formGroup" class="incident-form">
+        <mat-form-field>
+            <input matInput
+            placeholder="Short Description"
+                formControlName="short_description">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput
+            placeholder="Priority"
+                formControlName="priority">
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput
+                placeholder="Description" 
+                formControlName="description">
+            </textarea>
+        </mat-form-field>
+    </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="incident-actions">
+    <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+</mat-dialog-actions>
