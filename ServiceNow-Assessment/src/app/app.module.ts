@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
+import { TableComponent } from './table/table.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,

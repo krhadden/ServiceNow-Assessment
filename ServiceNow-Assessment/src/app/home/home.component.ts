@@ -12,9 +12,7 @@ export class HomeComponent implements OnInit {
   public states: string[] = ['Open', 'In Progress', 'Resolved', 'Closed'];
   public data: any;
   public statesData: any;
-
-  public displayedColumns: string[] = ['Numbers', 'Priority', 'ShortDescription', 'Category', 'State', 'Created'];
-
+  
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
