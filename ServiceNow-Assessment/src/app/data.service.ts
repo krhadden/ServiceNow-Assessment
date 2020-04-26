@@ -21,4 +21,10 @@ export class DataService {
     return this.httpClient.get(url, {params});
   }
 
+  public createNewIncident(data: any): Observable<any> {
+    const url = 'https://servicenow-ui-coding-challenge-api.netlify.app/.netlify/functions/server/insertIncident';
+    const body = data;
+    return this.httpClient.post(url, body);
+  }
+
 }
