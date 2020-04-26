@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as _ from 'lodash';
 
 import { DataService } from '../data.service';
 
@@ -8,7 +9,9 @@ import { DataService } from '../data.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  public states: string[] = ['Open', 'In Progress', 'Resolved', 'Closed'];
   public data: any;
+  public statesData: any;
 
   public displayedColumns: string[] = ['Numbers', 'Priority', 'ShortDescription', 'Category', 'State', 'Created'];
 
@@ -17,7 +20,18 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.getAllIncidents().subscribe(data => {
       this.data = data;
-      console.log(data);
+      this.setStatesData();
+    });
+  }
+
+  public setStatesData(): void {
+    this.statesData = {};
+    this.states.forEach(state => {
+      const incidentsByState = _.filter(this.data, ['state', state]);
+      this.statesData[state] = {
+        count: incidentsByState.length,
+        data: incidentsByState
+      };
     });
   }
 

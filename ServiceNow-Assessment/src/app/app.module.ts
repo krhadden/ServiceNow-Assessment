@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
 import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -31,7 +32,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],

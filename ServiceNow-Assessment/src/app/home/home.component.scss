@@ -1,4 +1,17 @@
 .home-container {
+    margin: 50px;
+}
+
+.state-cards {
+    display: flex;
+    justify-content: center;
+}
+
+.state-card {
+    flex: 1 0 auto;
+}
+
+.table-container {
     display: flex;
     justify-content: center;
 }
