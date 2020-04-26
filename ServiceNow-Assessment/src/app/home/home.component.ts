@@ -9,6 +9,7 @@ import { DataService } from '../data.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  public loading = true;
   public states: string[] = ['Open', 'In Progress', 'Resolved', 'Closed'];
   public data: any;
   public statesData: any;
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit {
     this.dataService.getAllIncidents().subscribe(data => {
       this.data = data;
       this.setStatesData();
+      this.loading = false;
     });
   }
 

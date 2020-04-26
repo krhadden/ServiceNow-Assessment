@@ -10,11 +10,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { TableComponent } from './table/table.component';
 import { StatePageComponent } from './state-page/state-page.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 const routes: Routes = [
   {
@@ -28,7 +30,8 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     TableComponent,
-    StatePageComponent
+    StatePageComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +42,8 @@ const routes: Routes = [
     BrowserAnimationsModule,
     MatTableModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

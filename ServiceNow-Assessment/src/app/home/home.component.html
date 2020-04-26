@@ -1,4 +1,5 @@
-<div class="home-container">
+<app-spinner [loading]="loading"></app-spinner>
+<div class="home-container" *ngIf="!loading">
     <ng-container *ngIf="!showState">
         <div class="state-cards">
             <mat-card class="state-card" (click)="selectState(state.key)" *ngFor="let state of statesData | keyvalue">
