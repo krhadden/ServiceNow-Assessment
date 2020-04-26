@@ -1,13 +1,18 @@
 <div class="home-container">
-    <div class="state-cards">
-        <mat-card class="state-card" *ngFor="let state of statesData | keyvalue">
-            <mat-card-content>{{state.key}}</mat-card-content>
-            <mat-card-title>{{state.value.count}}</mat-card-title>
-        </mat-card>
-    </div>
+    <ng-container *ngIf="!showState">
+        <div class="state-cards">
+            <mat-card class="state-card" (click)="selectState(state.key)" *ngFor="let state of statesData | keyvalue">
+                <mat-card-content>{{state.key}}</mat-card-content>
+                <mat-card-title>{{state.value.count}}</mat-card-title>
+            </mat-card>
+        </div>
 
-    <div class="table-container">
-        <app-table [data]="data"></app-table>
-    </div>
-
+        <div class="table-container">
+            <app-table [data]="data"></app-table>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="showState">
+        <button mat-raised-button (click)="showState=false;">Back</button>
+        <app-state-page [stateData]="state"></app-state-page>
+    </ng-container>
 </div>
