@@ -2,6 +2,8 @@
 This is my work for the coding exercise for ServiceNow for the role UI Engineer - Future Products.
 
 ## To run this application:
+I created this application with Node.js v12.14.0 and NPM 6.14.4.  Assuming you have up to date versions of Node and NPM:
+
 Clone this ServiceNow-Assessment repo.
 
 Navigate to ServiceNow-Assessment/ServiceNow-Assessment.
@@ -10,7 +12,7 @@ Run `npm install`.
 
 Run `ng serve --port 8082`.
 
-In your browser, navigate to 'localhost:8082'.
+In your browser, navigate to `localhost:8082`.
 
 
 ## Requirements Overview
@@ -32,19 +34,14 @@ any navigation you deem necessary.
 - [x] State Management.
     - [x] What happens if your components/pages are loading? [I added a spinner component to display while the data is loading.]
     - [x] What if there’s an error communicating with the server? [I added error handling in my http requests.  If there is an error, an alert will show at the top of the screen displaying the error.]
-    - [ ] What if fetches return empty? [I did not address this.  If successful fetches return empty, then no data will appear.]
-- [x] Creating a new incident: STRY0002: As an IT service agent, I would like to be able to open a new
-incident, in case something new has been reported. The mockup for this is not provided and it is up
-to you how you decide the add a new record [I added a yellow "+" button on the top right of the page modeled after image A.  This opens a modal where users can input values for the new incident. If the psot is successful, a snackbar message appears at the bottom of the screen informing them it was successful. If there is an error, an error message alert will appear at the top of the screen.]
+    - [x] What if fetches return empty? [If successful fetch returns empty, I'm assuming there is no data to display.]
+- [x] Creating a new incident: STRY0002: As an IT service agent, I would like to be able to open a new incident, in case something new has been reported. The mockup for this is not provided and it is up to you how you decide the add a new record [I added a yellow "+" button on the top right of the page modeled after image A.  This opens a modal where users can input values for the new incident. If the psot is successful, a snackbar message appears at the bottom of the screen informing them it was successful. If there is an error, an error message alert will appear at the top of the screen.]
 
 
 ## Feature/Story Breakdown
 I broke down the 2 given stories into smaller tasks as follows:
 
-##### STRY001: As an IT service agent, I would like a page where I can see a list of ALL incidents, with the
-ability to quickly see incidents BY ‘STATE’ (Open, In Progress, Resolved, Closed, which are shown as
-clickable cards in this wireframe on top of the page). This will help me find incidents I can work on or
-refer to for a solution. Clicking on any of the cards, will take the use to image B.
+##### STRY001: As an IT service agent, I would like a page where I can see a list of ALL incidents, with the ability to quickly see incidents BY ‘STATE’ (Open, In Progress, Resolved, Closed, which are shown as clickable cards in this wireframe on top of the page). This will help me find incidents I can work on or refer to for a solution. Clicking on any of the cards, will take the use to image B.
 
 Required Criteria:
 - [x]  Page A: Table: Display all incidents in table
@@ -67,12 +64,12 @@ Uncommitted Criteria:
 
 
 ## Assumptions
-Data is not modified after page has loaded.
+- I assumed that data will not be modified by another user after page has loaded. User will have to refresh the page for current data.
 
-I did not display duplicate values.  I assumed the user would not want to see multiple rows for the same incident.
+- I did not display duplicate values.  I assumed the user would not want to see multiple rows for the same incident.
 
-I assumed that in Image B, the symbol next to the “Open” title was a back button to take the user back to the page in Image A.
+- I assumed that in Image B, the symbol next to the “Open” title was a back button to take the user back to the page in Image A.
 
-I assumed that the number next to the “Open” title in Image B was the number of “Open” incidents. 
+- I assumed that the number next to the “Open” title in Image B was the number of “Open” incidents. 
 
-I assumed that the user could input any value for the “Number”, “Priority”, and “short_description” properties of an incident when creating a new incident. 
+- I assumed that the user could input any string for the “number”, "description", and “short_description” properties of an incident when creating a new incident. I also assumed that "sys_created_on" would automatically be added in the backend. I assumed the options in the dropdown menus for "state" and "priority" as well. 
