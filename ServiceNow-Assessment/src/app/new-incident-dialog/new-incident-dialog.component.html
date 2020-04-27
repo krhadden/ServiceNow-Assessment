@@ -9,24 +9,38 @@
     <form [formGroup]="formGroup" class="incident-form">
         <mat-form-field>
             <input matInput
-            placeholder="Number"
-                formControlName="number">
+                placeholder="Number"
+                formControlName="number"
+                required>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>State</mat-label>
+            <mat-select formControlName="state" required>
+                <mat-option *ngFor="let s of states" [value]="s">{{s}}</mat-option>
+            </mat-select>
         </mat-form-field>
         <mat-form-field>
             <input matInput
-            placeholder="State"
-                formControlName="state">
+                placeholder="Short Description"
+                formControlName="short_description"
+                required>
         </mat-form-field>
         <mat-form-field>
             <textarea matInput
-                placeholder="Short Description" 
-                formControlName="short_description">
+                placeholder="Description" 
+                formControlName="description">
             </textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Priority</mat-label>
+            <mat-select formControlName="priority">
+                <mat-option *ngFor="let p of priorityOptions" [value]="p">{{p}}</mat-option>
+            </mat-select>
         </mat-form-field>
     </form>
 
 </mat-dialog-content>
 
 <mat-dialog-actions class="incident-actions">
-    <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+    <button class="mat-raised-button mat-primary" [disabled]="!formGroup.valid" (click)="save()">Save</button>
 </mat-dialog-actions>

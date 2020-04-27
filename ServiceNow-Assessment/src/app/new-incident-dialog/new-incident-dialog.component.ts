@@ -16,6 +16,12 @@ export class NewIncidentDialogComponent implements OnInit {
   public number: number;
   public state: string;
   public shortDescription: string;
+  public description: string;
+  public priority: string;
+  public active: string;
+  public category: string;
+  public states: string[] = ['Open', 'In Progress', 'Resolved', 'Closed'];
+  public priorityOptions: string[] = ['1 - Critical', '2 - High', '3 - Moderate', '4 - Low', '5 - Planning'];
   public addSuccessMessage = 'Successfully created incident ';
 
   constructor(
@@ -27,6 +33,10 @@ export class NewIncidentDialogComponent implements OnInit {
       this.number = data.number;
       this.state = data.state;
       this.shortDescription = data.short_description;
+      this.description = data.description;
+      this.priority = data.priority;
+      this.active = data.active;
+      this.category = data.category;
     }
 
   ngOnInit(): void {
@@ -34,6 +44,9 @@ export class NewIncidentDialogComponent implements OnInit {
       number: [this.number, Validators.required],
       state: [this.number, Validators.required],
       short_description: [this.shortDescription, Validators.required],
+      description: [this.description, null],
+      priority: [this.priority, null],
+      active: [this.active, null]
     });
   }
 
