@@ -73,3 +73,15 @@ Uncommitted Criteria:
 - I assumed that the number next to the “Open” title in Image B was the number of “Open” incidents. 
 
 - I assumed that the user could input any string for the “number”, "description", and “short_description” properties of an incident when creating a new incident. I also assumed that "sys_created_on" would automatically be added in the backend. I assumed the options in the dropdown menus for "state" and "priority" as well. 
+
+
+## Reusable Components
+For one of the requirements, I created a custom reusable card component: ServiceNow-Assessment/src/app/card.
+
+This can be used in the HTML with the selector: `<app-card>`.
+
+This component takes two inputs: title and count. You can inject them like this:
+
+`<app-card [title]="titleData" [count]="countData">` ,
+
+assuming titleData is a string and countData is a number.
