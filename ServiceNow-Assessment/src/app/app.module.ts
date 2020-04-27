@@ -25,6 +25,7 @@ import { TableComponent } from './table/table.component';
 import { StatePageComponent } from './state-page/state-page.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { NewIncidentDialogComponent } from './new-incident-dialog/new-incident-dialog.component';
+import { CardComponent } from './card/card.component';
 
 const routes: Routes = [
   {
@@ -40,7 +41,8 @@ const routes: Routes = [
     TableComponent,
     StatePageComponent,
     SpinnerComponent,
-    NewIncidentDialogComponent
+    NewIncidentDialogComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,

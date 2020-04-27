@@ -9,10 +9,13 @@
         </div>
 
         <div class="state-cards">
-            <mat-card class="state-card" (click)="selectState(state.key)" *ngFor="let state of statesData | keyvalue">
-                <mat-card-content>{{state.key}}</mat-card-content>
-                <mat-card-title>{{state.value.count}}</mat-card-title>
-            </mat-card>
+            <app-card
+                class="state-card"
+                *ngFor="let state of statesData | keyvalue"
+                (click)="selectState(state.key)"
+                [title]="state.key"
+                [count]="state.value.count">
+            </app-card>
         </div>
 
         <div class="table-container">
