@@ -1,8 +1,17 @@
-.state-container {
-    margin: 50px;
+.state-header {
+    margin: 24px 20px 20px 60px;
+    display: flex;
+    align-items: start;
+}
+
+.state-count {
+    background-color: #ededed;
+    margin: 5px 0px 5px 10px;
+    padding: 2px 5px;
 }
 
 .table-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }

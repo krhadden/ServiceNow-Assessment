@@ -1,11 +1,21 @@
 .home-container {
-    margin: 50px;
+    min-height: 100%;
+    padding: 50px;
+}
+
+.defaultBackground {
+    background-color: #ededed;
+}
+
+.stateBackground {
+    background-color: white;
 }
 
 .header {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    margin: 0px 10px;
 }
 
 .state-cards {
@@ -19,5 +29,23 @@
 
 .table-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+}
+
+.table-title {
+    margin: 30px 0px 10px 10px;
+}
+
+.back-btn {
+    position: absolute;
+    top: 70px;
+    padding: 0px;
+    min-width: 50px;
+    background-color: inherit;
+    box-shadow: none;
+}
+
+.mat-icon {
+    width: 13px;
 }

@@ -1,5 +1,9 @@
+.mat-table {
+    width: 100%;
+}
+
 .mat-header-row {
-    background-color: #ededed;
+    background-color: white;
     height: 30px;
     font-weight: bold;
 }
@@ -7,6 +11,8 @@
 th.mat-header-cell {
     padding-left: 15px;
     color: black;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
 }
 
 .mat-row:nth-child(even){

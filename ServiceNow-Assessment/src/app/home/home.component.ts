@@ -47,6 +47,10 @@ export class HomeComponent implements OnInit {
     this.showState = true;
   }
 
+  public back(): void {
+    this.showState = false;
+  }
+
   public openNewIncident(): void {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;

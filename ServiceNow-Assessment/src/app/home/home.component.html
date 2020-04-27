@@ -1,5 +1,5 @@
 <app-spinner [loading]="loading"></app-spinner>
-<div class="home-container" *ngIf="!loading">
+<div class="home-container" *ngIf="!loading" [ngClass]="showState ? 'stateBackground' : 'defaultBackground'">
     <ng-container *ngIf="!showState">
         <div class="header">
             <div class="home-title">At A Glance</div>
@@ -24,7 +24,9 @@
         </div>
     </ng-container>
     <ng-container *ngIf="showState">
-        <button mat-raised-button (click)="showState=false;">Back</button>
+        <button mat-raised-button class="back-btn" (click)="back()">
+            <mat-icon>arrow_left</mat-icon><mat-icon>menu</mat-icon>
+        </button>
         <app-state-page [stateData]="state"></app-state-page>
     </ng-container>
 </div>
