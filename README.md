@@ -2,6 +2,7 @@
 This is my coding exercise for the ServiceNow role UI Engineer - Future Products.
 
 ## To run this application:
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 I created this application with Node.js v12.14.0 and NPM 6.14.4.  Assuming you have up to date versions of Node and NPM:
 
 Clone this ServiceNow-Assessment repo.
@@ -80,8 +81,6 @@ For one of the requirements, I created a custom reusable card component: Service
 
 This can be used in the HTML with the selector: `<app-card>`.
 
-This component takes two inputs: title and count. You can inject them like this:
+This component takes two inputs: `title` and `count`. You can inject them like this:
 
-`<app-card [title]="titleData" [count]="countData">` ,
-
-assuming titleData is a string and countData is a number.
+`<app-card [title]="titleData" [count]="countData">` , assuming titleData is a string and countData is a number.
