@@ -13,7 +13,7 @@ Run `npm install`.
 
 Run `ng serve --port 8082`.
 
-In your browser, navigate to `localhost:8082`.
+In your browser (I recommend Chrome), navigate to `localhost:8082`.
 
 
 ## Requirements Overview
