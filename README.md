@@ -3,9 +3,13 @@ This is my work for the coding exercise for ServiceNow for the role UI Engineer 
 
 ## To run this application:
 Clone this ServiceNow-Assessment repo.
+
 Navigate to ServiceNow-Assessment/ServiceNow-Assessment.
+
 Run `npm install`.
+
 Run `ng serve --port 8082`.
+
 In your browser, navigate to 'localhost:8082'.
 
 
