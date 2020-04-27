@@ -1,5 +1,5 @@
 # ServiceNow-Assessment
-This is my work for the coding exercise for ServiceNow for the role UI Engineer - Future Products.
+This is my coding exercise for the ServiceNow role UI Engineer - Future Products.
 
 ## To run this application:
 I created this application with Node.js v12.14.0 and NPM 6.14.4.  Assuming you have up to date versions of Node and NPM:
