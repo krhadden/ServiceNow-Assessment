@@ -1,3 +1,14 @@
-.mat-row:nth-child(odd){
-    background-color:#D3D3D3;
+.mat-header-row {
+    background-color: #ededed;
+    height: 30px;
+    font-weight: bold;
+}
+
+th.mat-header-cell {
+    padding-left: 15px;
+    color: black;
+}
+
+.mat-row:nth-child(even){
+    background-color: #ededed;
 }
